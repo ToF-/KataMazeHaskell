@@ -1,0 +1,7 @@
+
+scanMaze
+  - should read a very simple maze
+  - should find A and B locations
+
+Finished in 0.0001 seconds
+2 examples, 0 failures
