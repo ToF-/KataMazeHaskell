@@ -1,0 +1,14 @@
+
+1. read the maze specification from standard input
+    # is a wall
+    . is a free space
+    A is starting point (on a border)
+    B is ending point   (on a border)
+2. transpose the maze into a graph
+3. solve the maze: shortest path from A to B, using Djikstra Algorithm
+4. outputs the maze solved 
+    o is a step in the path
+5. outputs the directions from A to B:
+    e.g. EEESSWSSEEEEENNEE
+
+
