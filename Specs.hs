@@ -1,9 +1,13 @@
 module Specs
 where
 import Test.Hspec
+import Maze
 
 main = hspec $ do
-    describe "a dummy test" $ do
-        it "should fail " $ do
-            2+2 `shouldBe` 5
+    describe "scanMaze" $ do
+        it "should read a very simple maze" $ do
+            scanMaze ["AB"] `shouldBe` 
+                Maze { a = (0,0),
+                       b = (0,1),
+                       rooms = [(0,0),(0,1)] }
 
