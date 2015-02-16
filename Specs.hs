@@ -41,3 +41,8 @@ main = hspec $ do
                 Maze {a = (0,2), 
                       b = (3,3), 
                       rooms = [(0,2),(1,1),(1,2),(1,3),(2,1),(2,3),(3,3)]}
+
+    describe "mazeGraph" $ do
+        it "should convert a very simple maze" $ do
+            let m = Maze (0,0),(0,1) [(0,0),(0,1)]
+            graph m = 
