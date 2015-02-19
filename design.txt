@@ -6,11 +6,12 @@
     B is ending point   (on a border)
 2. transpose the maze into a graph
 3. solve the maze: shortest path from A to B, using Djikstra Algorithm
-3.1 initialize a partially ordered tree (POT) with each node: key = node, prio = distance = Infinity
-    set the priority of node source to 0
+3.1 initialize a partially ordered tree (POT) with each node: key = node, distance_from_source = Infinity
+    set distance_from_source of source to 0 
     update map of distances with source, distance_from_source = 0, via = source itself 
-    start with r = source
-3.2 r is fixed,
+    
+3.2 r is settled,
+    for each of the adjacent nodes of r, if distance_from_source r > distance_from_source
     update in POT all adjacent nodes of r, prio = distance from r
     extract the node s with minimal distance_from_source
     if distance_from_source r + weight r s < distance_from_source s 
