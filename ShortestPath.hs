@@ -18,6 +18,9 @@ type Queue = PSQ Node (Distance, Node)
 infinity :: Int
 infinity = maxBound
 
-
 initialize :: Graph -> Node ->  Queue
-initialize g _ = Q.empty 
+initialize g n = foldl insertNode Q.empty (M.keys g)
+    where
+    insertNode :: Queue -> Node -> Queue 
+    insertNode q m = Q.insert m (distance,m) q
+        where distance = if m == n then 0 else infinity
