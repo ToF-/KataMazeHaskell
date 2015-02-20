@@ -1,4 +1,25 @@
 
+
+Dijkstra
+
+initialize all node with distance = infinity
+change node source: distance = (0,source) (itself)
+
+while priority queue is not empty
+    extract (_node_,(_dist_,_via_)) from the priority queue 
+    _node_ is the node with shortest distance to source
+    insert (_node_,(_distance_ , _via_)) in the result list
+    delete _node_ from the priority queue
+
+    for all edges (_neighbor_,_label_) going from _node_
+        (_distance_,_via_) = find key _neighbor_ in the priority queue
+        if _distance_ + _label_ < _distance_ then
+            update priority (_distance_ + _label_, _node_) for key _neighbor_ in the priority queue
+
+ 
+
+
+
 1. read the maze specification from standard input
     # is a wall
     . is a free space
