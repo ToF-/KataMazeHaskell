@@ -3,7 +3,7 @@ where
 import Data.Map (Map)
 import qualified Data.Map as M
 import Data.PSQueue (PSQ)
-import Data.PSQueue as Q (empty, insert)
+import Data.PSQueue as Q (empty, insert,deleteMin)
 
 
 type Node  = Int
@@ -24,3 +24,8 @@ initialize g n = foldl insertNode Q.empty (M.keys g)
     insertNode :: Queue -> Node -> Queue 
     insertNode q m = Q.insert m (distance,m) q
         where distance = if m == n then 0 else infinity
+
+settle :: (Queue,Path) -> (Queue,Path)
+settle (q,p) = (Q.deleteMin q,p)
+    
+    
